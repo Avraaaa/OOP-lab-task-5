@@ -104,12 +104,9 @@ public class IITDUFootballLeagueRegistration {
         interDeptYes.setBounds(300, 420, 70, 25);
         JRadioButton interDeptNo = new JRadioButton("No");
         interDeptNo.setBounds(380, 420, 70, 25);
-        interDeptYes.addActionListener(e -> {
-            if (interDeptYes.isSelected()) interDeptNo.setSelected(false);
-        });
-        interDeptNo.addActionListener(e -> {
-            if (interDeptNo.isSelected()) interDeptYes.setSelected(false);
-        });
+        ButtonGroup interDeptGroup = new ButtonGroup();
+        interDeptGroup.add(interDeptYes);
+        interDeptGroup.add(interDeptNo);
         frame.add(interDeptLabel);
         frame.add(interDeptYes);
         frame.add(interDeptNo);
@@ -202,8 +199,7 @@ public class IITDUFootballLeagueRegistration {
                 genderGroup.clearSelection();
                 degreeBox.setSelectedIndex(0);
                 positionBox.setSelectedIndex(0);
-                interDeptYes.setSelected(false);
-                interDeptNo.setSelected(false);
+                interDeptGroup.clearSelection();
                 experienceArea.setText("");
                 dayBox.setSelectedIndex(0);
                 monthBox.setSelectedIndex(0);
