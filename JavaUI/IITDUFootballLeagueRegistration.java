@@ -132,7 +132,7 @@ public class IITDUFootballLeagueRegistration {
         frame.add(fileButton);
         frame.add(filePathLabel);
 
-        final String[] selectedFilePath = {""};
+        String[] selectedFilePath = {""};
         fileButton.addActionListener(e -> {
             JFileChooser chooser = new JFileChooser();
             int option = chooser.showOpenDialog(frame);
@@ -153,7 +153,12 @@ public class IITDUFootballLeagueRegistration {
             String email = emailField.getText().trim();
             String phone = phoneField.getText().trim();
             String address = addressField.getText().trim();
-            String gender = male.isSelected() ? "Male" : (female.isSelected() ? "Female" : "");
+            String gender = "";
+            if (male.isSelected()) {
+                gender = "Male";
+            } else if (female.isSelected()) {
+                gender = "Female";
+            }
             String dob = dayBox.getSelectedItem() + "-" + monthBox.getSelectedItem() + "-" + yearBox.getSelectedItem();
             String degree = (String) degreeBox.getSelectedItem();
             String position = (String) positionBox.getSelectedItem();
