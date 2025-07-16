@@ -162,7 +162,12 @@ public class IITDUFootballLeagueRegistration {
             String dob = dayBox.getSelectedItem() + "-" + monthBox.getSelectedItem() + "-" + yearBox.getSelectedItem();
             String degree = (String) degreeBox.getSelectedItem();
             String position = (String) positionBox.getSelectedItem();
-            String interDept = interDeptYes.isSelected() ? "Yes" : (interDeptNo.isSelected() ? "No" : "");
+            String interDept = "";
+            if (interDeptYes.isSelected()) {
+                interDept = "Yes";
+            } else if (interDeptNo.isSelected()) {
+                interDept = "No";
+            }
             String experience = experienceArea.getText().trim();
             String photo = selectedFilePath[0];
 
